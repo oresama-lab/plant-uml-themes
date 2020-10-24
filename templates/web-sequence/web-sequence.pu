@@ -35,7 +35,7 @@ group HTTP sequence
     Accept-Encoding: gzip
     Accept-Language: en-US
   end note
-  server -> pc: HTTP/1.1 200 OK {1,678 byte}
+  server -> pc: HTTP/1.1 200 OK
   note over server
     HTTP/1.1 200 OK
     Content-Encoding: gzip
@@ -58,7 +58,9 @@ end
 
 group Terminate TCP session (TCP four wave)
   server -> pc: [tcp/80] FIN
-  note over server: ACK=1, FIN=1, SEQNUM=1678, ACKNUM=901
+  note over server
+    ACK=1, FIN=1, SEQNUM=1678, ACKNUM=901
+  end note
   pc -> server: [tcp/random] ACK
   note over pc: ACK=1, SEQNUM=901, ACKNUM=1679
   pc -> server: [tcp/random] FIN
