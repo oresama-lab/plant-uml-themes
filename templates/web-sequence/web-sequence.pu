@@ -11,7 +11,7 @@ participant DNS as dns
 participant "PC(browser)" as pc
 participant "Web-server" as server
 
-group 名前解決
+group Domain name resolution
   pc -> dns : [udp/53] dns A query: www.example.com
   dns -> pc : [udp/random] dns A reply: 93.184.216.34
 end
