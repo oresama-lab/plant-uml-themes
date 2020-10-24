@@ -7,6 +7,10 @@ skinparam SequenceGroupBorderThickness 1
 skinparam sequenceMessageAlign center
 skinparam sequenceReferenceAlign left
 skinparam NoteFontSize 9
+skinparam ArrowFontSize 9
+skinparam SequenceGroupFontSize 9
+skinparam SequenceGroupHeaderFontSize 9
+
 
 participant "PC" as pc
 participant "Server" as server
