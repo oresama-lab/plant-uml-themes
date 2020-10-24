@@ -18,11 +18,8 @@ end
 
 group TCP 3-way-handshake
   pc -> server: [tcp/80] SYN
-  note over pc: SYN=1, ACK=0, SEQNUM=0
   server -> pc: [tcp/random] SYN + ACK
-  note over server: SYN=1, ACK=1, SEQNUM=0, ACKNUM=1
   pc -> server: [tcp/80] ACK
-  server -> pc: SYN=0, ACK=1, SEQNUM=1, ACKNUM=1
 end
 
 group HTTP sequence
@@ -59,14 +56,10 @@ end
 group Terminate TCP session (TCP four wave)
   server -> pc: [tcp/80] FIN
   note over server
-    ACK=1, FIN=1, SEQNUM=1678, ACKNUM=901
   end note
   pc -> server: [tcp/random] ACK
-  note over pc: ACK=1, SEQNUM=901, ACKNUM=1679
   pc -> server: [tcp/random] FIN
-  note over pc: ACK=1, FIN=1, SEQNUM=1679, ACKNUM=902
   server -> pc: [tcp/80] ACK
-  note over server: ACK=1, SEQNUM=902, ACKNUM=1680
 end
 
 footer Copyright 2020 oresmalabo.net
