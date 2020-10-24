@@ -6,6 +6,7 @@ skinparam RoundCorner 7
 skinparam SequenceGroupBorderThickness 1
 skinparam sequenceMessageAlign center
 skinparam sequenceReferenceAlign left
+skinparam NoteFontSize 9
 
 participant DNS as dns
 participant "PC(browser)" as pc
